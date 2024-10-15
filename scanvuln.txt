@@ -1,0 +1,40 @@
+pmedina@PabloMR0603 [22:30:27] [~/AttackingVulnerabilities] [main]
+-> % nmap --script=vuln 195.200.15.229
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-10-15 22:30 CEST
+Nmap scan report for srv555253.hstgr.cloud (195.200.15.229)
+Host is up (0.041s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE
+22/tcp  open  ssh
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+80/tcp  open  http
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192:
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|       https://www.securityfocus.com/bid/49303
+|       https://seclists.org/fulldisclosure/2011/Aug/175
+|_      https://www.tenable.com/plugins/nessus/55976
+|_http-vuln-cve2014-3704: ERROR: Script execution failed (use -d to debug)
+443/tcp open  https
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2014-3704: ERROR: Script execution failed (use -d to debug)
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown:
+
+Nmap done: 1 IP address (1 host up) scanned in 143.67 seconds
